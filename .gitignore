@@ -1,3 +1,3 @@
 .vercel
 .DS_Store
-reportes/*.raw.json
+reportes/

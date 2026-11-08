@@ -8,6 +8,6 @@ Web de descargas y demo de GOGASORT: ordena fotos y vídeos con IA que corre en 
 - `site/descargar/{x64,arm64}` · enlaces de descarga con conteo.
 - `tools/fotos_demo.py` · regenera las miniaturas de la demo desde la app.
 - `tools/capturas.mjs` · capturas de revisión (escritorio y móvil).
-- `tools/reporte.md` · cómo sacar el reporte de clics.
+- `tools/reporte.py` · reporte de clics (Vercel Web Analytics vía `vercel api`; guarda histórico en `reportes/`, que no se versiona).
 
 Hecho por @arturogoga.
