@@ -3,42 +3,79 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Descargando fotosort ARM64</title>
+  <title>Descargar fotosort portátil ARM64</title>
   <meta name="robots" content="noindex">
   <meta name="theme-color" content="#02060c">
-  <meta http-equiv="refresh" content="4;url=https://github.com/argokaz/gogasort/releases/download/v1.2.0/fotosort-1.2.0-Windows-ARM64.zip">
   <link rel="icon" href="/gogasort.ico" sizes="any">
   <style>
     @font-face { font-family: "Geist"; src: url("/fonts/geist.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
     :root { color-scheme: dark; }
-    body { margin: 0; min-height: 100dvh; display: grid; place-items: center; background: radial-gradient(700px 500px at 50% 45%, rgba(42,146,216,.22), transparent 65%), #02060c; color: #e4f4ff; font: 400 16px/1.5 "Geist", system-ui, sans-serif; text-align: center; padding: 24px; }
-    .orb { width: 120px; height: 120px; margin: 0 auto 28px; position: relative; }
-    .orb i { position: absolute; inset: 28px; border-radius: 50%; background: radial-gradient(circle at 40% 35%, #fff, #c4f0ff 35%, #7fdcff 60%, rgba(127,220,255,0) 72%); box-shadow: 0 0 60px rgba(127,220,255,.55); animation: p 1.4s ease-in-out infinite; }
-    .orb b { position: absolute; inset: 0; border-radius: 50%; border: 2px solid rgba(127,220,255,.8); transform: rotate(-24deg) scaleY(.38); animation: s 1.6s linear infinite; }
-    .orb b + b { border-color: rgba(255,179,92,.8); transform: rotate(38deg) scaleY(.32); animation-duration: 2.1s; animation-direction: reverse; }
-    @keyframes p { 50% { transform: scale(1.08); } }
-    @keyframes s { to { rotate: 360deg; } }
-    h1 { font-size: 22px; font-weight: 600; margin: 0 0 8px; letter-spacing: -.01em; }
-    p { margin: 0; color: #a6c1d6; }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100dvh; display: grid; place-items: center; background: radial-gradient(800px 560px at 50% 30%, rgba(42,146,216,.2), transparent 65%), #02060c; color: #e4f4ff; font: 400 16px/1.5 "Geist", system-ui, sans-serif; padding: 28px 16px; }
+    main { width: min(620px, 100%); }
+    .k { display: inline-flex; align-items: center; gap: 8px; font: 700 12px/1 "Geist", sans-serif; letter-spacing: .14em; text-transform: uppercase; color: #ffb35c; }
+    .k i { width: 9px; height: 9px; border-radius: 50%; background: #ffb35c; box-shadow: 0 0 12px #ffb35c; }
+    h1 { font-size: clamp(24px, 4.4vw, 32px); line-height: 1.15; font-weight: 650; margin: 12px 0 10px; letter-spacing: -.02em; }
+    p.lead { margin: 0 0 22px; color: #a6c1d6; }
+    ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+    li { display: grid; grid-template-columns: 34px 1fr; gap: 14px; align-items: start; }
+    li > span { width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; font-weight: 700; color: #02060c; background: #ffb35c; box-shadow: 0 0 18px rgba(255,179,92,.45); }
+    li b { color: #fff; }
+    li p { margin: 5px 0 0; color: #a6c1d6; }
+    /* dibujo esquemático del aviso (no es una captura): dónde están los dos clics */
+    .win { margin-top: 10px; border-radius: 10px; background: #0b3a6e; border: 1px solid rgba(255,255,255,.18); padding: 14px 16px; font-size: 14px; color: #dbe9f7; max-width: 420px; }
+    .win .t { font-size: 18px; font-weight: 600; color: #fff; margin-bottom: 6px; }
+    .win .lnk { color: #fff; text-decoration: underline; font-weight: 600; outline: 2px dashed #ffb35c; outline-offset: 3px; border-radius: 2px; }
+    .win .row { display: flex; justify-content: flex-end; gap: 8px; margin-top: 12px; }
+    .win .b { padding: 6px 14px; border: 1px solid rgba(255,255,255,.5); border-radius: 4px; color: #fff; font-weight: 600; }
+    .win .b.hot { outline: 2px dashed #ffb35c; outline-offset: 3px; }
+    .note { margin: 18px 0 0; font-size: 14px; color: #8aa4bb; }
+    .go { margin-top: 26px; display: flex; flex-wrap: wrap; align-items: center; gap: 14px; }
+    button { appearance: none; border: 0; cursor: pointer; height: 52px; padding: 0 26px; border-radius: 14px; font: 650 16px "Geist", sans-serif; color: #fff;
+      background: linear-gradient(180deg, #4b8bff, #1a5bff); box-shadow: 0 1px 0 rgba(255,255,255,.4) inset, 0 16px 44px -12px rgba(61,139,255,.8); }
+    button:disabled { cursor: default; background: #13233d; color: #7f97b4; box-shadow: none; }
+    button:not(:disabled):hover { filter: brightness(1.08); }
+    .go small { color: #8aa4bb; font-size: 14px; }
     a { color: #7fdcff; }
-    @media (prefers-reduced-motion: reduce) { .orb i, .orb b { animation: none; } }
+    .done { display: none; margin-top: 14px; color: #a6c1d6; }
   </style>
   <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
   <script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
   <main>
-    <div class="orb" aria-hidden="true"><b></b><b></b><i></i></div>
-    <h1>Descargando fotosort portátil (ZIP) para Windows ARM64…</h1>
-    <p>Si no pasa nada, <a id="go" href="https://github.com/argokaz/gogasort/releases/download/v1.2.0/fotosort-1.2.0-Windows-ARM64.zip" rel="noopener">toca aquí</a>.</p>
+    <span class="k"><i></i>Antes de descargar</span>
+    <h1>Windows te avisará al abrir fotosort. Es normal.</h1>
+    <p class="lead">fotosort es nuevo y no tiene firma digital de pago, así que Windows pide una confirmación la primera vez. No significa que tenga nada malo: todo corre en tu PC y es gratis.</p>
+    <ol>
+      <li><span>1</span><div><b>Descomprime el ZIP (clic derecho > «Extraer todo…») y abre fotosort.cmd.</b> Si aparece «Windows protegió su PC», pulsa <b>Más información</b>.
+        <div class="win" aria-hidden="true"><div class="t">Windows protegió su PC</div>Windows SmartScreen impidió el inicio de una aplicación no reconocida…<br><span class="lnk">Más información</span><div class="row"><span class="b">No ejecutar</span></div></div></div></li>
+      <li><span>2</span><div><b>Pulsa «Ejecutar de todos modos».</b> Aparece abajo, junto a «No ejecutar», después del paso 1.
+        <div class="win" aria-hidden="true"><div class="t">Windows protegió su PC</div>Aplicación: fotosort.cmd<br>Editor: Editor desconocido<div class="row"><span class="b hot">Ejecutar de todos modos</span><span class="b">No ejecutar</span></div></div></div></li>
+    </ol>
+    <p class="note">Si el navegador avisa al descargar que el archivo «no se descarga habitualmente», abre el menú <b>⋯</b> de la descarga y elige <b>Conservar</b>.</p>
+    <div class="go">
+      <button id="go" type="button" disabled>Lee los pasos…</button>
+      <small>Versión portátil (ZIP) para Snapdragon o RTX Spark · 266 MB</small>
+    </div>
+    <p class="done" id="done">Descargando fotosort-1.2.0-Windows-ARM64.zip… Si no empieza, <a id="link" href="https://github.com/argokaz/gogasort/releases/download/v1.2.0/fotosort-1.2.0-Windows-ARM64.zip" rel="noopener">toca aquí</a>. Cuando termine, ábrelo y sigue los pasos de arriba.</p>
   </main>
   <script>
     (function () {
-      var dest = "https://github.com/argokaz/gogasort/releases/download/v1.2.0/fotosort-1.2.0-Windows-ARM64.zip", gone = false;
-      function go() { if (gone) return; gone = true; location.replace(dest); }
-      /* deja tiempo a que la analítica registre la visita y luego salta */
-      window.addEventListener("load", function () { setTimeout(go, 750); });
-      setTimeout(go, 2600);
+      var dest = "https://github.com/argokaz/gogasort/releases/download/v1.2.0/fotosort-1.2.0-Windows-ARM64.zip", btn = document.getElementById("go"), left = 4;
+      /* la descarga se habilita después de mostrar las instrucciones (unos segundos para leerlas) */
+      function tick() {
+        if (left > 0) { btn.textContent = "Lee los pasos… " + left; left--; setTimeout(tick, 1000); }
+        else { btn.disabled = false; btn.textContent = "Entendido, descargar"; }
+      }
+      tick();
+      btn.addEventListener("click", function () {
+        if (btn.disabled) return;
+        if (window.va) window.va("event", { name: "descarga", data: { archivo: "fotosort-1.2.0-Windows-ARM64.zip" } });
+        document.getElementById("done").style.display = "block";
+        btn.textContent = "Descargando…"; btn.disabled = true;
+        location.href = dest;
+      });
     })();
   </script>
 </body>

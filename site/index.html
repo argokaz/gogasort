@@ -270,6 +270,17 @@
             <span class="dl-arch">fotosort 1.2.0</span>
             <p class="dl-who">Un solo instalador para Intel, AMD, Snapdragon y NVIDIA RTX Spark: instala solo la versión de tu procesador. <span id="archHint"></span></p>
             <div class="dl-meta"><span class="chip">Instalador · 315 MB</span><span class="chip">IA la primera vez · unos 4 a 6 GB</span><span class="chip">Sin permisos de administrador</span></div>
+            <div class="smartscreen" role="note">
+              <i data-lucide="shield-alert"></i>
+              <div>
+                <b>Windows te avisará: es normal.</b> fotosort es nuevo y no tiene firma digital de pago, así que Windows pide confirmar antes de abrirlo.
+                <ol>
+                  <li>Al abrir el instalador, si aparece <q>Windows protegió su PC</q>, pulsa <b>Más información</b>.</li>
+                  <li>Pulsa <b>Ejecutar de todos modos</b>. Ya está: se instala como cualquier programa.</li>
+                </ol>
+                <small>Si el navegador avisa al descargar que el archivo <q>no se descarga habitualmente</q>, elige <b>Conservar</b> (en el menú <b>⋯</b> de la descarga).</small>
+              </div>
+            </div>
             <a class="btn btn-primary" href="/descargar/windows"><i data-lucide="download"></i>Descargar fotosort para Windows</a>
             <div class="sha"><code title="SHA-256">e40adaa67cb95c69235e2b4743ffcdb0c0c768f06302be14b0c6a05e9d58014f</code><button type="button" data-copy="e40adaa67cb95c69235e2b4743ffcdb0c0c768f06302be14b0c6a05e9d58014f"><i data-lucide="copy"></i>SHA-256</button></div>
           </article>
@@ -278,12 +289,12 @@
           <summary><i data-lucide="package"></i>¿Prefieres la versión portátil? ZIP sin instalar, para llevar en un USB</summary>
           <div class="zip-row" id="dl-x64"><b>Windows x64</b><span>Intel o AMD · ZIP · 291 MB</span><a href="/descargar/x64">Descargar ZIP x64</a><code title="SHA-256">cf93b192b3307fb8e0d2c3460e9b3f19da2bd495e72e5e12b9360c9a7328aca5</code></div>
           <div class="zip-row" id="dl-arm64"><b>Windows ARM64</b><span>Snapdragon o RTX Spark · ZIP · 266 MB</span><a href="/descargar/arm64">Descargar ZIP ARM64</a><code title="SHA-256">e0b8fe3d6e5aca29d34216fff8407e4fe6297e507864d8979a97cee4ed0ae97b</code></div>
-          <p>Descomprime el ZIP (clic derecho &gt; «Extraer todo…») y abre <code>fotosort.cmd</code>. La primera vez descarga la IA en una ventana de consola.</p>
+          <p>Descomprime el ZIP (clic derecho &gt; «Extraer todo…») y abre <code>fotosort.cmd</code>. Si Windows avisa, <b>«Más información»</b> &gt; <b>«Ejecutar de todos modos»</b>. La primera vez descarga la IA en una ventana de consola.</p>
         </details>
 
         <div class="steps">
           <div class="step rv" style="--i:0"><h3>Descarga</h3><p>Baja el instalador: el mismo para cualquier PC con Windows 10 u 11.</p></div>
-          <div class="step rv" style="--i:1"><h3>Instala</h3><p>Doble clic y «Siguiente». Si Windows dice «Windows protegió tu PC», pulsa «Más información» &gt; «Ejecutar de todas formas»: pasa con los programas sin firma digital de pago.</p></div>
+          <div class="step rv" style="--i:1"><h3>Instala</h3><p>Doble clic y «Siguiente». Si aparece «Windows protegió su PC», pulsa <b>«Más información»</b> y luego <b>«Ejecutar de todos modos»</b>: pasa con los programas sin firma digital de pago.</p></div>
           <div class="step rv" style="--i:2"><h3>Prepara la IA</h3><p>La primera vez fotosort descarga la IA solo, con una barra de progreso (unos minutos). Mientras tanto ya puedes probar «Ver demo».</p></div>
           <div class="step rv" style="--i:3"><h3>Ordena</h3><p>Ábrelo desde el menú Inicio, pulsa «Elegir carpeta» y empieza a ordenar en cuanto la eliges.</p></div>
         </div>
@@ -310,7 +321,7 @@
           <details><summary>¿Puede borrar mis fotos?<i data-lucide="plus"></i></summary><p>No borra nada: solo mueve archivos cuando lo confirmas, y todo se puede deshacer.</p></details>
           <details><summary>¿Y las fotos del iPhone (HEIC) y los vídeos?<i data-lucide="plus"></i></summary><p>Se leen y se ordenan. Los vídeos van a su propia carpeta «Vídeos».</p></details>
           <details><summary>¿Funciona en Mac o Linux?<i data-lucide="plus"></i></summary><p>Por ahora solo en Windows 10 y 11.</p></details>
-          <details><summary>¿Por qué Windows dice que protegió mi PC?<i data-lucide="plus"></i></summary><p>Porque la app no tiene firma digital de pago. Pulsa «Más información» &gt; «Ejecutar de todas formas».</p></details>
+          <details><summary>¿Por qué Windows dice que protegió mi PC?<i data-lucide="plus"></i></summary><p>Porque fotosort es nuevo y no tiene firma digital de pago, no porque tenga nada malo. Para instalarlo o abrirlo, pulsa <b>«Más información»</b> y luego <b>«Ejecutar de todos modos»</b>. Solo lo pide la primera vez.</p></details>
           <details><summary>¿Cómo lo desinstalo?<i data-lucide="plus"></i></summary><p>Como cualquier programa: Inicio &gt; Configuración &gt; Aplicaciones &gt; Aplicaciones instaladas &gt; fotosort &gt; Desinstalar. Se borra todo, también la IA descargada. Tus fotos no se tocan.</p></details>
           <details><summary>Algo no funciona<i data-lucide="plus"></i></summary><p>¿Se cortó la descarga de la IA? Pulsa «Reintentar» en la ventana de fotosort: sigue donde se quedó. Si no arranca, mira <span class="mono">data\server-error.log</span> en <span class="mono">%LOCALAPPDATA%\Programs\fotosort</span>.</p></details>
         </div>

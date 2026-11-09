@@ -483,3 +483,12 @@ main > section:not(.hero)::before {
 .zip-row.rec b::after { content: " · tu PC"; color: var(--accent); font-weight: 500; }
 .zips p { margin: 4px 0 14px; font-size: 14px; }
 @media (max-width: 620px) { .zip-row { grid-template-columns: 1fr; } }
+/* aviso de SmartScreen bajo el botón de descarga: el paso que más asusta, explicado antes de que pase */
+.smartscreen { display: grid; grid-template-columns: auto 1fr; gap: 12px; padding: 14px 16px; border-radius: 14px;
+  background: var(--hot-soft, rgba(255,179,92,0.1)); border: 1px solid rgba(255,179,92,0.35); color: var(--ink-2); font-size: 14px; line-height: 1.5; }
+.smartscreen > svg { width: 22px; height: 22px; color: #ffb35c; margin-top: 1px; }
+.smartscreen b { color: var(--ink); }
+.smartscreen q { color: var(--ink); quotes: "«" "»"; }
+.smartscreen ol { margin: 8px 0 6px; padding-left: 20px; display: grid; gap: 4px; }
+.smartscreen ol li::marker { color: #ffb35c; font-weight: 700; }
+.smartscreen small { display: block; color: var(--ink-3); font-size: 12.5px; }
