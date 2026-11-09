@@ -3,14 +3,75 @@
   "trailingSlash": false,
   "outputDirectory": "site",
   "rewrites": [
-    { "source": "/proart/:canal", "destination": "/proart" },
-    { "source": "/descargar/windows/:canal", "destination": "/descargar/windows" },
-    { "source": "/descargar/x64/:canal", "destination": "/descargar/x64" },
-    { "source": "/descargar/arm64/:canal", "destination": "/descargar/arm64" }
+    {
+      "source": "/app/:canal",
+      "destination": "/"
+    },
+    {
+      "source": "/app",
+      "destination": "/"
+    },
+    {
+      "source": "/proart/:canal",
+      "destination": "/proart"
+    },
+    {
+      "source": "/descargar/windows/:canal",
+      "destination": "/descargar/windows"
+    },
+    {
+      "source": "/descargar/x64/:canal",
+      "destination": "/descargar/x64"
+    },
+    {
+      "source": "/descargar/arm64/:canal",
+      "destination": "/descargar/arm64"
+    }
   ],
   "headers": [
-    { "source": "/(img|fonts)/(.*)", "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }] },
-    { "source": "/proart(.*)", "headers": [{ "key": "Cache-Control", "value": "no-store" }, { "key": "X-Robots-Tag", "value": "noindex" }] },
-    { "source": "/descargar/(.*)", "headers": [{ "key": "Cache-Control", "value": "no-store" }, { "key": "X-Robots-Tag", "value": "noindex" }] }
+    {
+      "source": "/(img|fonts)/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/proart(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-store"
+        },
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex"
+        }
+      ]
+    },
+    {
+      "source": "/descargar/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-store"
+        },
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex"
+        }
+      ]
+    },
+    {
+      "source": "/app(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex"
+        }
+      ]
+    }
   ]
 }

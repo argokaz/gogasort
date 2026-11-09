@@ -3,7 +3,8 @@
 
 Qué mide (cada visita a la página de salto = 1 clic; los navegadores automatizados no cuentan):
   /proart, /proart/<canal>          -> clics al enlace de la ASUS ProArt P16 (salta a pe.asus.click/v3t6du)
-  /descargar/x64[/<canal>], /descargar/arm64[/<canal>] -> clics de descarga
+  /app/<canal>                       -> visitas a la web que llegan desde un botón con canal (reel, story…)
+  /descargar/windows|x64|arm64[/<canal>] -> clics de descarga
   /                                  -> visitas a la web
 
 El plan Hobby de Vercel solo guarda los datos un tiempo y no desglosa UTM; por eso los canales van en la ruta
@@ -44,6 +45,10 @@ def q(by, desde, hasta, limit=100, filtro=None):
 def tipo(path):
     if path.startswith("/proart"):
         return "proart"
+    if path.startswith("/app"):
+        return "app"
+    if path.startswith("/descargar/windows"):
+        return "windows"
     if path.startswith("/descargar/x64"):
         return "x64"
     if path.startswith("/descargar/arm64"):
@@ -55,7 +60,7 @@ def tipo(path):
 
 def canal(path):
     partes = [p for p in path.split("/") if p]
-    base = 1 if partes and partes[0] == "proart" else 2
+    base = 1 if partes and partes[0] in ("proart", "app") else 2
     return partes[base] if len(partes) > base else "directo"
 
 
@@ -78,11 +83,12 @@ def main():
     json.dump(hist, open(hist_f, "w"), indent=1, sort_keys=True)
 
     dias = sorted(d for d in hist if desde <= d <= hasta)
-    tot = {"proart": 0, "x64": 0, "arm64": 0, "web": 0}
+    tot = {"proart": 0, "app": 0, "windows": 0, "x64": 0, "arm64": 0, "web": 0}
     canales = {}
+    canales_app = {}
     por_dia = []
     for d in dias:
-        fila = {"proart": 0, "x64": 0, "arm64": 0, "web": 0}
+        fila = {"proart": 0, "app": 0, "windows": 0, "x64": 0, "arm64": 0, "web": 0}
         for path, n in hist[d].items():
             t = tipo(path)
             if t in fila:
@@ -90,6 +96,8 @@ def main():
                 tot[t] += n
             if t == "proart":
                 canales[canal(path)] = canales.get(canal(path), 0) + n
+            if t == "app":
+                canales_app[canal(path)] = canales_app.get(canal(path), 0) + n
         por_dia.append((d, fila))
 
     # 2) desgloses del enlace ProArt (país, dispositivo, sistema, origen)
@@ -103,6 +111,8 @@ def main():
     L.append(f"Periodo: **{desde} a {hasta}** (días en hora UTC) · generado {dt.datetime.now().strftime('%Y-%m-%d %H:%M')}\n")
     L.append("| Métrica | Clics |\n|---|---|")
     L.append(f"| **ASUS ProArt P16** (enlace de seguimiento) | **{tot['proart']}** |")
+    L.append(f"| Visitas a la web desde botones con canal (`/app/…`) | {tot['app']} |")
+    L.append(f"| Descargas Windows (instalador) | {tot['windows']} |")
     L.append(f"| Descargas Windows x64 | {tot['x64']} |")
     L.append(f"| Descargas Windows ARM64 | {tot['arm64']} |")
     L.append(f"| Visitas a la web | {tot['web']} |")
@@ -111,9 +121,13 @@ def main():
     L.append("\n## ProArt P16 por canal\n\n| Canal (ruta) | Clics |\n|---|---|")
     for c, n in sorted(canales.items(), key=lambda x: -x[1]):
         L.append(f"| {c} (`/proart{'' if c == 'directo' else '/' + c}`) | {n} |")
-    L.append("\n## Por día\n\n| Día | ProArt | x64 | ARM64 | Web |\n|---|---|---|---|---|")
+    if canales_app:
+        L.append("\n## App por canal (botón «Descargar mi app»)\n\n| Canal (ruta) | Visitas |\n|---|---|")
+        for c, n in sorted(canales_app.items(), key=lambda x: -x[1]):
+            L.append(f"| {c} (`/app{'' if c == 'directo' else '/' + c}`) | {n} |")
+    L.append("\n## Por día\n\n| Día | ProArt | App (canal) | Windows | x64 | ARM64 | Web |\n|---|---|---|---|---|---|---|")
     for d, f in por_dia:
-        L.append(f"| {d} | {f['proart']} | {f['x64']} | {f['arm64']} | {f['web']} |")
+        L.append(f"| {d} | {f['proart']} | {f['app']} | {f['windows']} | {f['x64']} | {f['arm64']} | {f['web']} |")
     for dim, titulo in [("country", "País"), ("deviceType", "Dispositivo"), ("osName", "Sistema"), ("referrerHostname", "Viene de")]:
         L.append(f"\n## ProArt P16 por {titulo.lower()}\n\n| {titulo} | Clics |\n|---|---|")
         for k, n in tabla(dim):
