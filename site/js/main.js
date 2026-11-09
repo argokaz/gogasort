@@ -259,3 +259,12 @@
     });
   });
 })();
+
+/* luz que sigue al cursor en las tarjetas */
+document.querySelectorAll(".spot").forEach(function (el) {
+  var l = document.createElement("span"); l.className = "spot-l"; l.setAttribute("aria-hidden", "true"); el.appendChild(l);
+  el.addEventListener("pointermove", function (e) {
+    var r = el.getBoundingClientRect();
+    el.style.setProperty("--mx", (e.clientX - r.left) + "px"); el.style.setProperty("--my", (e.clientY - r.top) + "px");
+  });
+});

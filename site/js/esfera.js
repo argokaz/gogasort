@@ -9,7 +9,7 @@
 (function () {
   "use strict";
   var TAU = Math.PI * 2;
-  var CYAN = "127,220,255", ICE = "196,240,255", DEEP = "42,146,216", AMBER = "255,179,92";
+  var CYAN = "52,132,255", ICE = "150,205,255", DEEP = "22,80,232", AMBER = "255,179,92";
   var E = {
     out: function (t) { return 1 - Math.pow(1 - t, 3); },
     inOut: function (t) { return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; },
@@ -446,7 +446,7 @@
       x.drawImage(im, -h, -h, size, size);
       /* luz: más oscuro en los bordes del globo, brillo arriba a la izquierda */
       var shade = (1 - z) * 0.62 - Math.max(0, -p.ny * 0.2 - p.nx * 0.12);
-      if (shade > 0) { x.fillStyle = "rgba(2,10,22," + shade + ")"; x.fillRect(-h, -h, size, size); }
+      if (shade > 0) { x.fillStyle = "rgba(1,6,24," + shade + ")"; x.fillRect(-h, -h, size, size); }
       var band = Math.exp(-Math.pow((p.ny - Math.sin(this.time * 0.9) * 0.9) * 4, 2)) * 0.28;
       x.fillStyle = "rgba(" + CYAN + "," + (0.05 + band) + ")"; x.fillRect(-h, -h, size, size);
       x.globalAlpha = 1;
@@ -631,11 +631,11 @@
     var nw = x.measureText(num).width;
     var pw = tw + nw + 34 * k + 8, ph = fs * 2;
     var lx = px - pw / 2, ly = py + bh * 0.65 + 4, hov = this.hoverNode === c;
-    x.fillStyle = hov ? "rgba(16,48,78,0.96)" : "rgba(6,18,32,0.84)";
+    x.fillStyle = hov ? "rgba(12,40,110,0.96)" : "rgba(3,12,40,0.86)";
     x.strokeStyle = "rgba(" + col + "," + (hov ? 0.95 : 0.4 + c.flash * 0.6) + ")"; x.lineWidth = 1;
     x.beginPath(); x.roundRect(lx, ly, pw, ph, ph / 2); x.fill(); x.stroke();
     x.textBaseline = "middle";
-    x.font = "600 " + fs + "px Geist, system-ui, sans-serif"; x.fillStyle = "rgba(228,244,255,0.96)";
+    x.font = "600 " + fs + "px Geist, system-ui, sans-serif"; x.fillStyle = "rgba(232,241,255,0.96)";
     x.fillText(c.name, lx + 12 * k + 3, ly + ph / 2 + 0.5);
     x.font = "600 " + fs + "px 'Geist Mono', monospace"; x.fillStyle = "rgba(" + col + ",1)";
     x.fillText(num, lx + pw - nw - 12 * k - 3, ly + ph / 2 + 0.5);
