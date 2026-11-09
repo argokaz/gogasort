@@ -271,13 +271,18 @@
             <p class="dl-who">Un solo instalador para Intel, AMD, Snapdragon y NVIDIA RTX Spark: instala solo la versión de tu procesador. <span id="archHint"></span></p>
             <div class="dl-meta"><span class="chip">Instalador · 315 MB</span><span class="chip">IA la primera vez · unos 4 a 6 GB</span><span class="chip">Sin permisos de administrador</span></div>
             <div class="smartscreen" role="note">
-              <i data-lucide="shield-alert"></i>
+              <i data-lucide="shield-check"></i>
               <div>
-                <b>Windows te avisará: es normal.</b> fotosort es nuevo y no tiene firma digital de pago, así que Windows pide confirmar antes de abrirlo.
+                <b>Windows te va a avisar. Es seguro.</b> El aviso sale con cualquier programa nuevo que no ha pagado un certificado de firma digital, no porque haya algo malo. Se pasa con dos clics:
                 <ol>
-                  <li>Al abrir el instalador, si aparece <q>Windows protegió su PC</q>, pulsa <b>Más información</b>.</li>
-                  <li>Pulsa <b>Ejecutar de todos modos</b>. Ya está: se instala como cualquier programa.</li>
+                  <li>En <q>Windows protegió su PC</q>, pulsa <b>Más información</b>.</li>
+                  <li>Pulsa <b>Ejecutar de todos modos</b>. Listo: se instala como cualquier programa.</li>
                 </ol>
+                <ul class="calm">
+                  <li>Analizado con Microsoft Defender: sin amenazas.</li>
+                  <li>Sin permisos de administrador: no cambia nada de Windows.</li>
+                  <li>Tus fotos no salen de tu PC.</li>
+                </ul>
                 <small>Si el navegador avisa al descargar que el archivo <q>no se descarga habitualmente</q>, elige <b>Conservar</b> (en el menú <b>⋯</b> de la descarga).</small>
               </div>
             </div>
@@ -294,7 +299,7 @@
 
         <div class="steps">
           <div class="step rv" style="--i:0"><h3>Descarga</h3><p>Baja el instalador: el mismo para cualquier PC con Windows 10 u 11.</p></div>
-          <div class="step rv" style="--i:1"><h3>Instala</h3><p>Doble clic y «Siguiente». Si aparece «Windows protegió su PC», pulsa <b>«Más información»</b> y luego <b>«Ejecutar de todos modos»</b>: pasa con los programas sin firma digital de pago.</p></div>
+          <div class="step rv" style="--i:1"><h3>Instala</h3><p>Doble clic y «Siguiente». En el aviso «Windows protegió su PC», pulsa <b>«Más información»</b> y luego <b>«Ejecutar de todos modos»</b>. Es seguro: sale con todo programa sin firma digital de pago.</p></div>
           <div class="step rv" style="--i:2"><h3>Prepara la IA</h3><p>La primera vez fotosort descarga la IA solo, con una barra de progreso (unos minutos). Mientras tanto ya puedes probar «Ver demo».</p></div>
           <div class="step rv" style="--i:3"><h3>Ordena</h3><p>Ábrelo desde el menú Inicio, pulsa «Elegir carpeta» y empieza a ordenar en cuanto la eliges.</p></div>
         </div>
@@ -321,7 +326,7 @@
           <details><summary>¿Puede borrar mis fotos?<i data-lucide="plus"></i></summary><p>No borra nada: solo mueve archivos cuando lo confirmas, y todo se puede deshacer.</p></details>
           <details><summary>¿Y las fotos del iPhone (HEIC) y los vídeos?<i data-lucide="plus"></i></summary><p>Se leen y se ordenan. Los vídeos van a su propia carpeta «Vídeos».</p></details>
           <details><summary>¿Funciona en Mac o Linux?<i data-lucide="plus"></i></summary><p>Por ahora solo en Windows 10 y 11.</p></details>
-          <details><summary>¿Por qué Windows dice que protegió mi PC?<i data-lucide="plus"></i></summary><p>Porque fotosort es nuevo y no tiene firma digital de pago, no porque tenga nada malo. Para instalarlo o abrirlo, pulsa <b>«Más información»</b> y luego <b>«Ejecutar de todos modos»</b>. Solo lo pide la primera vez.</p></details>
+          <details><summary>¿Por qué Windows dice que protegió mi PC? ¿Es seguro?<i data-lucide="plus"></i></summary><p>Sí, es seguro. Windows muestra ese aviso con cualquier programa nuevo que no ha pagado un certificado de firma digital (cuesta cada año); no significa que haya encontrado nada. Si Windows detectara un virus, lo bloquearía sin ofrecerte «Ejecutar de todos modos». Cada versión de fotosort se analiza con Microsoft Defender antes de publicarla, se instala sin permisos de administrador y tus fotos nunca salen de tu PC. Para abrirlo, pulsa <b>«Más información»</b> y luego <b>«Ejecutar de todos modos»</b>. Solo lo pide la primera vez.</p></details>
           <details><summary>¿Cómo lo desinstalo?<i data-lucide="plus"></i></summary><p>Como cualquier programa: Inicio &gt; Configuración &gt; Aplicaciones &gt; Aplicaciones instaladas &gt; fotosort &gt; Desinstalar. Se borra todo, también la IA descargada. Tus fotos no se tocan.</p></details>
           <details><summary>Algo no funciona<i data-lucide="plus"></i></summary><p>¿Se cortó la descarga de la IA? Pulsa «Reintentar» en la ventana de fotosort: sigue donde se quedó. Si no arranca, mira <span class="mono">data\server-error.log</span> en <span class="mono">%LOCALAPPDATA%\Programs\fotosort</span>.</p></details>
         </div>
