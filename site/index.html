@@ -208,7 +208,7 @@
           <div class="node rv" style="--i:4">
             <div class="ic"><i data-lucide="folder-tree"></i></div>
             <h3>Tus carpetas</h3>
-            <p>Personas, Paisajes, Comida… o las que tú le pidas con tus palabras. Subcarpetas por mes si las quieres, como <span class="mono hi">Paisajes\2025-08</span>.</p>
+            <p>Personas, Paisajes, Comida… o las que tú le pidas con tus palabras. Por año si quieres, como <span class="mono hi">2025\Paisajes</span>, con subcarpetas por mes, y renombradas con la fecha en que se tomaron. Las fechas de tus fotos nunca se cambian.</p>
           </div>
         </div>
       </div>
@@ -263,40 +263,35 @@
       <div class="wrap">
         <div class="sec-head">
           <h2 id="h-dl" class="rv">Descárgalo gratis.</h2>
-          <p class="lead rv" style="--i:1">Para Windows 10 y 11. Elige la edición de tu PC: no hace falta instalar nada más, todo viene dentro de la carpeta.</p>
+          <p class="lead rv" style="--i:1">Para Windows 10 y 11. Un instalador normal, para cualquier PC: se instala sin permisos de administrador y se desinstala desde «Aplicaciones instaladas».</p>
         </div>
-        <div class="dl-grid">
-          <article class="dl-card zap spot rv" id="dl-x64" style="--i:0">
-            <span class="dl-arch">Windows x64</span>
-            <p class="dl-who">PCs con Intel o AMD. La mayoría.</p>
-            <div class="dl-meta"><span class="chip">ZIP · 281 MB</span><span class="chip">IA la primera vez · unos 5,7 GB</span></div>
-            <a class="btn btn-primary" href="/descargar/x64"><i data-lucide="download"></i>Descargar x64</a>
-            <div class="sha"><code title="SHA-256">245d801a93d3ac6ee50d9d31d13370e2ec0ab10736c7b491bc3964340982930e</code><button type="button" data-copy="245d801a93d3ac6ee50d9d31d13370e2ec0ab10736c7b491bc3964340982930e"><i data-lucide="copy"></i>SHA-256</button></div>
-          </article>
-          <article class="dl-card zap spot rv" id="dl-arm64" style="--i:1">
-            <span class="dl-arch">Windows ARM64</span>
-            <p class="dl-who">PCs con Snapdragon (Copilot+ PC) o NVIDIA RTX Spark.</p>
-            <div class="dl-meta"><span class="chip">ZIP · 255 MB</span><span class="chip">IA la primera vez · unos 4,3 GB</span></div>
-            <a class="btn btn-primary" href="/descargar/arm64"><i data-lucide="download"></i>Descargar ARM64</a>
-            <div class="sha"><code title="SHA-256">d259073a158f0ed3e7c347cee15f1858404ac651506e340ed47449f0c793ce07</code><button type="button" data-copy="d259073a158f0ed3e7c347cee15f1858404ac651506e340ed47449f0c793ce07"><i data-lucide="copy"></i>SHA-256</button></div>
+        <div class="dl-grid one">
+          <article class="dl-card rec zap spot rv" id="dl-setup" style="--i:0">
+            <span class="dl-arch">fotosort 1.2.0</span>
+            <p class="dl-who">Un solo instalador para Intel, AMD, Snapdragon y NVIDIA RTX Spark: instala solo la versión de tu procesador. <span id="archHint"></span></p>
+            <div class="dl-meta"><span class="chip">Instalador · 315 MB</span><span class="chip">IA la primera vez · unos 4 a 6 GB</span><span class="chip">Sin permisos de administrador</span></div>
+            <a class="btn btn-primary" href="/descargar/windows"><i data-lucide="download"></i>Descargar fotosort para Windows</a>
+            <div class="sha"><code title="SHA-256">e40adaa67cb95c69235e2b4743ffcdb0c0c768f06302be14b0c6a05e9d58014f</code><button type="button" data-copy="e40adaa67cb95c69235e2b4743ffcdb0c0c768f06302be14b0c6a05e9d58014f"><i data-lucide="copy"></i>SHA-256</button></div>
           </article>
         </div>
-        <div class="which rv">
-          <i data-lucide="circle-help"></i>
-          <p><b>¿Cuál es el mío?</b> <span id="archHint"></span> En Windows: Inicio &gt; Configuración &gt; Sistema &gt; Información &gt; «Tipo de sistema». Si dice «procesador basado en x64», baja x64; si dice «basado en ARM», baja ARM64. Si ya tienes Ollama, fotosort usa el tuyo y solo baja los modelos: SigLIP2 (690 MB) y Qwen3.5 4B (3,4 GB).</p>
-        </div>
+        <details class="zips rv">
+          <summary><i data-lucide="package"></i>¿Prefieres la versión portátil? ZIP sin instalar, para llevar en un USB</summary>
+          <div class="zip-row" id="dl-x64"><b>Windows x64</b><span>Intel o AMD · ZIP · 291 MB</span><a href="/descargar/x64">Descargar ZIP x64</a><code title="SHA-256">cf93b192b3307fb8e0d2c3460e9b3f19da2bd495e72e5e12b9360c9a7328aca5</code></div>
+          <div class="zip-row" id="dl-arm64"><b>Windows ARM64</b><span>Snapdragon o RTX Spark · ZIP · 266 MB</span><a href="/descargar/arm64">Descargar ZIP ARM64</a><code title="SHA-256">e0b8fe3d6e5aca29d34216fff8407e4fe6297e507864d8979a97cee4ed0ae97b</code></div>
+          <p>Descomprime el ZIP (clic derecho &gt; «Extraer todo…») y abre <code>fotosort.cmd</code>. La primera vez descarga la IA en una ventana de consola.</p>
+        </details>
 
         <div class="steps">
-          <div class="step rv" style="--i:0"><h3>Descarga</h3><p>Baja el ZIP de tu PC.</p></div>
-          <div class="step rv" style="--i:1"><h3>Descomprime</h3><p>Clic derecho &gt; «Extraer todo…», por ejemplo en <code>Documentos\fotosort</code>. No lo abras desde dentro del ZIP.</p></div>
-          <div class="step rv" style="--i:2"><h3>Abre <code>fotosort.cmd</code></h3><p>Si Windows dice «Windows protegió tu PC», pulsa «Más información» &gt; «Ejecutar de todas formas». Pasa con los programas sin firma digital.</p></div>
-          <div class="step rv" style="--i:3"><h3>Ordena</h3><p>La primera vez descarga y prepara la IA sola. Luego pulsa «Ver demo» o «Elegir carpeta»: empieza a ordenar en cuanto la eliges.</p></div>
+          <div class="step rv" style="--i:0"><h3>Descarga</h3><p>Baja el instalador: el mismo para cualquier PC con Windows 10 u 11.</p></div>
+          <div class="step rv" style="--i:1"><h3>Instala</h3><p>Doble clic y «Siguiente». Si Windows dice «Windows protegió tu PC», pulsa «Más información» &gt; «Ejecutar de todas formas»: pasa con los programas sin firma digital de pago.</p></div>
+          <div class="step rv" style="--i:2"><h3>Prepara la IA</h3><p>La primera vez fotosort descarga la IA solo, con una barra de progreso (unos minutos). Mientras tanto ya puedes probar «Ver demo».</p></div>
+          <div class="step rv" style="--i:3"><h3>Ordena</h3><p>Ábrelo desde el menú Inicio, pulsa «Elegir carpeta» y empieza a ordenar en cuanto la eliges.</p></div>
         </div>
 
         <div class="need rv" aria-label="Requisitos">
           <span class="chip"><i data-lucide="monitor"></i>Windows 10 u 11 de 64 bits</span>
           <span class="chip"><i data-lucide="memory-stick"></i>8 GB de RAM, 16 GB recomendados</span>
-          <span class="chip"><i data-lucide="hard-drive"></i>9 GB libres en x64, 6 GB en ARM64</span>
+          <span class="chip"><i data-lucide="hard-drive"></i>Unos 6 GB libres</span>
           <span class="chip"><i data-lucide="wifi"></i>Internet solo la primera vez</span>
           <span class="chip"><i data-lucide="cpu"></i>Recomendado: GPU de 6 GB o RTX Spark</span>
         </div>
@@ -316,7 +311,8 @@
           <details><summary>¿Y las fotos del iPhone (HEIC) y los vídeos?<i data-lucide="plus"></i></summary><p>Se leen y se ordenan. Los vídeos van a su propia carpeta «Vídeos».</p></details>
           <details><summary>¿Funciona en Mac o Linux?<i data-lucide="plus"></i></summary><p>Por ahora solo en Windows 10 y 11.</p></details>
           <details><summary>¿Por qué Windows dice que protegió mi PC?<i data-lucide="plus"></i></summary><p>Porque la app no tiene firma digital de pago. Pulsa «Más información» &gt; «Ejecutar de todas formas».</p></details>
-          <details><summary>Algo no funciona<i data-lucide="plus"></i></summary><p>Mira <span class="mono">data\setup.log</span> y <span class="mono">data\server-error.log</span> dentro de la carpeta. Para empezar de cero, borra <span class="mono">data\setup.ok</span> y vuelve a abrir. ¿Se cortó la descarga de la IA? Doble clic en <span class="mono">Descargar IA.cmd</span>: retoma donde se quedó.</p></details>
+          <details><summary>¿Cómo lo desinstalo?<i data-lucide="plus"></i></summary><p>Como cualquier programa: Inicio &gt; Configuración &gt; Aplicaciones &gt; Aplicaciones instaladas &gt; fotosort &gt; Desinstalar. Se borra todo, también la IA descargada. Tus fotos no se tocan.</p></details>
+          <details><summary>Algo no funciona<i data-lucide="plus"></i></summary><p>¿Se cortó la descarga de la IA? Pulsa «Reintentar» en la ventana de fotosort: sigue donde se quedó. Si no arranca, mira <span class="mono">data\server-error.log</span> en <span class="mono">%LOCALAPPDATA%\Programs\fotosort</span>.</p></details>
         </div>
       </div>
     </section>

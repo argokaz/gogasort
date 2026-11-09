@@ -231,15 +231,11 @@
 
   /* ── descargas: recomendar la edición correcta ─ */
   var hint = $("#archHint");
+  /* el instalador es el mismo para todos: solo se confirma qué versión instalará (y se marca el ZIP de ese PC) */
   function recommend(arch) {
-    var card = $(arch === "arm64" ? "#dl-arm64" : "#dl-x64");
-    card.classList.add("rec");
-    var b = document.createElement("span");
-    b.className = "rec-badge";
-    b.innerHTML = '<i data-lucide="check"></i>Para tu PC';
-    card.prepend(b);
-    if (window.lucide) lucide.createIcons({ root: card });
-    hint.textContent = arch === "arm64" ? "Tu PC parece ARM64 (Snapdragon o RTX Spark)." : "Tu PC parece x64 (Intel o AMD).";
+    var row = $(arch === "arm64" ? "#dl-arm64" : "#dl-x64");
+    if (row) row.classList.add("rec");
+    hint.textContent = arch === "arm64" ? "Tu PC parece ARM64 (Snapdragon o RTX Spark): instalará esa versión." : "Tu PC parece x64 (Intel o AMD): instalará esa versión.";
   }
   var ua = navigator.userAgent;
   if (!/Windows/i.test(ua)) {

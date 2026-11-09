@@ -468,3 +468,18 @@ main > section:not(.hero)::before {
 .brand-text { display: inline-flex; flex-direction: column; gap: 5px; }
 .byline { font: 500 9.5px/1 var(--font); letter-spacing: 0.32em; text-transform: uppercase; color: var(--accent-2); opacity: 0.62; padding-left: 0.15em; white-space: nowrap; }
 @media (max-width: 520px) { .nav .byline { font-size: 8px; letter-spacing: 0.22em; } }
+
+/* descargas 1.2: un instalador para todos + versión portátil (ZIP) plegada */
+.dl-grid.one { grid-template-columns: 1fr; max-width: 760px; }
+.dl-card .dl-who span { display: block; margin-top: 6px; color: var(--accent-2); }
+.zips { margin-top: 22px; max-width: 760px; border: 1px solid var(--line); border-radius: 16px; background: var(--bg-2); padding: 4px 18px; color: var(--ink-2); }
+.zips summary { cursor: pointer; list-style: none; display: flex; align-items: center; gap: 10px; padding: 12px 0; font-weight: 600; color: var(--ink); }
+.zips summary::-webkit-details-marker { display: none; }
+.zips summary svg { width: 18px; height: 18px; color: var(--accent); }
+.zip-row { display: grid; grid-template-columns: 210px 1fr auto; gap: 4px 14px; align-items: center; padding: 12px 0; border-top: 1px solid var(--line); }
+.zip-row b { color: var(--ink); } .zip-row span { font-size: 14px; }
+.zip-row a { color: var(--accent-2); font-weight: 600; text-decoration: none; } .zip-row a:hover { text-decoration: underline; }
+.zip-row code { grid-column: 1 / -1; font: 500 11.5px var(--mono); color: var(--ink-3); overflow-wrap: anywhere; }
+.zip-row.rec b::after { content: " · tu PC"; color: var(--accent); font-weight: 500; }
+.zips p { margin: 4px 0 14px; font-size: 14px; }
+@media (max-width: 620px) { .zip-row { grid-template-columns: 1fr; } }

@@ -4,6 +4,7 @@
   "outputDirectory": "site",
   "rewrites": [
     { "source": "/proart/:canal", "destination": "/proart" },
+    { "source": "/descargar/windows/:canal", "destination": "/descargar/windows" },
     { "source": "/descargar/x64/:canal", "destination": "/descargar/x64" },
     { "source": "/descargar/arm64/:canal", "destination": "/descargar/arm64" }
   ],

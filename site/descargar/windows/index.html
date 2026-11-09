@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Descargando fotosort</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#02060c">
+  <meta http-equiv="refresh" content="4;url=https://github.com/argokaz/gogasort/releases/download/v1.2.0/fotosort-1.2.0-Setup.exe">
+  <link rel="icon" href="/gogasort.ico" sizes="any">
+  <style>
+    @font-face { font-family: "Geist"; src: url("/fonts/geist.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
+    :root { color-scheme: dark; }
+    body { margin: 0; min-height: 100dvh; display: grid; place-items: center; background: radial-gradient(700px 500px at 50% 45%, rgba(42,146,216,.22), transparent 65%), #02060c; color: #e4f4ff; font: 400 16px/1.5 "Geist", system-ui, sans-serif; text-align: center; padding: 24px; }
+    .orb { width: 120px; height: 120px; margin: 0 auto 28px; position: relative; }
+    .orb i { position: absolute; inset: 28px; border-radius: 50%; background: radial-gradient(circle at 40% 35%, #fff, #c4f0ff 35%, #7fdcff 60%, rgba(127,220,255,0) 72%); box-shadow: 0 0 60px rgba(127,220,255,.55); animation: p 1.4s ease-in-out infinite; }
+    .orb b { position: absolute; inset: 0; border-radius: 50%; border: 2px solid rgba(127,220,255,.8); transform: rotate(-24deg) scaleY(.38); animation: s 1.6s linear infinite; }
+    .orb b + b { border-color: rgba(255,179,92,.8); transform: rotate(38deg) scaleY(.32); animation-duration: 2.1s; animation-direction: reverse; }
+    @keyframes p { 50% { transform: scale(1.08); } }
+    @keyframes s { to { rotate: 360deg; } }
+    h1 { font-size: 22px; font-weight: 600; margin: 0 0 8px; letter-spacing: -.01em; }
+    p { margin: 0; color: #a6c1d6; }
+    a { color: #7fdcff; }
+    @media (prefers-reduced-motion: reduce) { .orb i, .orb b { animation: none; } }
+  </style>
+  <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+  <script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body>
+  <main>
+    <div class="orb" aria-hidden="true"><b></b><b></b><i></i></div>
+    <h1>Descargando el instalador de fotosort para Windows…</h1>
+    <p>Si no pasa nada, <a id="go" href="https://github.com/argokaz/gogasort/releases/download/v1.2.0/fotosort-1.2.0-Setup.exe" rel="noopener">toca aquí</a>.</p>
+  </main>
+  <script>
+    (function () {
+      var dest = "https://github.com/argokaz/gogasort/releases/download/v1.2.0/fotosort-1.2.0-Setup.exe", gone = false;
+      function go() { if (gone) return; gone = true; location.replace(dest); }
+      /* deja tiempo a que la analítica registre la visita y luego salta */
+      window.addEventListener("load", function () { setTimeout(go, 750); });
+      setTimeout(go, 2600);
+    })();
+  </script>
+</body>
+</html>
