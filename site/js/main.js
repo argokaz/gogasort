@@ -108,8 +108,8 @@
         typing = setInterval(function () { i++; cap.textContent = s.slice(0, i); if (i >= s.length) clearInterval(typing); }, 26);
       }
     } else {
-      chips += '<span class="chip"><i data-lucide="zap"></i>CLIP · ' + Math.round(f.d.p * 100) + " %</span>";
-      cap.textContent = target === "Duplicados" ? "Copia exacta de otra foto." : target === "Vídeos" ? "Es un vídeo: va aparte." : "Evidente. CLIP la resolvió en milisegundos.";
+      chips += '<span class="chip"><i data-lucide="zap"></i>SigLIP2 · ' + Math.round(f.d.p * 100) + " %</span>";
+      cap.textContent = target === "Duplicados" ? "Copia exacta de otra foto." : target === "Vídeos" ? "Es un vídeo: va aparte." : "Evidente. SigLIP2 la resolvió en milisegundos.";
     }
     verdict.innerHTML = chips;
     if (window.lucide) lucide.createIcons({ nameAttr: "data-lucide", root: verdict });
@@ -168,7 +168,7 @@
     var opts = demoE.cats.map(function (k) { return k.name; });
     var html = '<div class="sheet-head"><i data-lucide="folder-open" class="hi"></i><h3>' + c.name + ' <span class="mono hi">' + items.length + '</span></h3><button class="x" type="button" aria-label="Cerrar"><i data-lucide="x"></i></button></div><div class="gal">';
     items.forEach(function (f) {
-      var label = f.d.e === "qwen" ? f.d.c : "CLIP · " + Math.round(f.d.p * 100) + " %";
+      var label = f.d.e === "qwen" ? f.d.c : "SigLIP2 · " + Math.round(f.d.p * 100) + " %";
       html += '<figure><img alt="" src="' + BASE + f.d.id + '.webp"><figcaption>' + label + '</figcaption><label class="sr-only" for="mv-' + f.i + '">Mover a</label><select id="mv-' + f.i + '" data-i="' + f.i + '">' +
         opts.map(function (o) { return '<option' + (o === c.name ? " selected" : "") + ">" + o + "</option>"; }).join("") + "</select></figure>";
     });
@@ -243,7 +243,7 @@
   }
   var ua = navigator.userAgent;
   if (!/Windows/i.test(ua)) {
-    hint.textContent = "GOGASORT es para Windows: descárgalo desde tu PC.";
+    hint.textContent = "fotosort es para Windows: descárgalo desde tu PC.";
   } else if (navigator.userAgentData && navigator.userAgentData.getHighEntropyValues) {
     navigator.userAgentData.getHighEntropyValues(["architecture", "bitness"]).then(function (v) {
       if (v.architecture === "arm") recommend("arm64");

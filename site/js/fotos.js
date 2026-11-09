@@ -1,4 +1,4 @@
-// Generado por tools/fotos_demo.py. Fotos de prueba de GOGASORT (Unsplash).
+// Generado por tools/fotos_demo.py. Fotos de prueba de fotosort (Unsplash).
 window.FOTOS = [
 {
 "id": "paris",

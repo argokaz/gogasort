@@ -1,4 +1,4 @@
-/* FotoSort / GOGASORT · web
+/* fotosort por arturogoga · web
    Mundo: el de la app. Sala de control holográfica: hielo cian sobre azul noche,
    ámbar solo para lo que importa (IA local, sin internet, duplicados).
    Radios: paneles 16px, botones 11px, insignias y chips 999px (igual que la app).
@@ -463,3 +463,8 @@ main > section:not(.hero)::before {
   .zap::after, .hero h1 em { animation: none !important; }
   .zap::after { background: none; }
 }
+
+/* firma bajo el logotipo, como en la app: «fotosort» y debajo «POR ARTUROGOGA» */
+.brand-text { display: inline-flex; flex-direction: column; gap: 5px; }
+.byline { font: 500 9.5px/1 var(--font); letter-spacing: 0.32em; text-transform: uppercase; color: var(--accent-2); opacity: 0.62; padding-left: 0.15em; white-space: nowrap; }
+@media (max-width: 520px) { .nav .byline { font-size: 8px; letter-spacing: 0.22em; } }
